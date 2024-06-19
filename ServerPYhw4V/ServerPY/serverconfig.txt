@@ -1,0 +1,2 @@
+port_mode = True
+pasv_mode = True

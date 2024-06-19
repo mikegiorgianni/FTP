@@ -1,0 +1,19 @@
+02-26-2021 23:36:30.4069 Could not bind to port 21. In-use
+02-26-2021 23:38:16.9813 Listening on port: 21
+2021-02-27 00:02:40.284902 : Could not bind to: 21, port is in use
+2021-02-27 00:03:15.770051 : Could not bind to: 21, port is in use
+2021-02-27 00:04:06.297849 : Could not bind to: 894, port is in use
+2021-02-27 00:04:28.472070 : Could not bind to: 8045, port is in use
+2021-02-27 00:05:30.043095 : Could not bind to: 8047, port is in use
+2021-02-27 00:05:34.913941 : Could not bind to: 8048, port is in use
+2021-02-27 00:05:38.397881 : Could not bind to: 8049, port is in use
+2021-02-27 00:07:02.263133 : Could not bind to: 8049, port is in use
+2021-02-27 00:10:50.730027 : Could not bind to: 8049, port is in use
+2021-02-27 00:11:35.414288 : Could not bind to: 8044, port is in use
+2021-02-27 00:13:19.850909 : Could not bind to: 0, port is in use
+2021-02-27 00:17:07.144621 : Could not bind to port is in use
+02-27-2021 00:27:43.9567 Listening on port: 8043
+2021-02-27 00:29:34.828974 : Listening on Port: 54935
+2021-02-27 00:48:01.186023 : Listening on Port: 56159
+2021-02-27 00:48:11.102318 : Recieved data: AUTH TLS
+2021-02-27 00:48:16.126172 : Recieved data: AUTH TLS
