@@ -17,10 +17,11 @@ timeStamp = str(dto.hour + dto.minute + dto.second + dto.microsecond)
 
 #creating socket connection to FTP server
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-host = '10.246.251.93'
+host = '127.0.0.1'
 buffer = 2048
-username = "cs472"
-password = "hw2ftp"
+#username = "mike"
+#password = "pass"
+is_logged_in = False
 
 def main():
 	# username and pass for test server
@@ -47,20 +48,20 @@ def main():
 		th = listeningThread(portnum)
 		th.start()
 '''
-	auth()
+	#auth()
 	commandLine()
 
-#the login authentication to an FTP server
+#the login authentication to an FTP server NOTE: was moved to the user command
 def auth():
 	myPrint(timeStamp + "	beginning the logon procedure \n" )
 	try:
 		#send data
-		#user = input('What is the user name : ')
-		sock.sendall(bytes("USER " + username + "\r\n", 'utf-8'))
+		username = input('What is the user name : ')
+		sock.sendall(bytes("user " + username + "\r\n", 'utf-8'))
 		data = sock.recv(buffer)
 		myPrint(data)
-		#password = input()
-		sock.sendall(bytes("PASS " + password + "\r\n", 'utf-8'))
+		password = input('What is the password : ')
+		sock.sendall(bytes("pass " + password + "\r\n", 'utf-8'))
 		data = sock.recv(buffer)
 		myPrint(data)
 		myPrint(timeStamp + "	Username and Password accepted! \n" )
@@ -70,7 +71,7 @@ def auth():
 		myPrint("The username or password is incorrect! ")
 		raise
 
-#The basic CLI I created
+#basic CLI
 def commandLine():
 	myPrint("What would you like to do : \n")
 	command = input("FTP -> " )
@@ -81,7 +82,7 @@ def commandLine():
 	elif command.lower() == "exit":
 		disconnect()
 	elif command.lower() == "help":
-		myPrint("The available commands are : cwd, pwd, user, port, pasv, ,put, exit \n")
+		myPrint("The available commands are : cwd, pwd, user, port, pasv, syst, put, exit \n")
 		commandLine()
 	elif command.lower() == "pwd":
 		pwd()
@@ -103,6 +104,9 @@ def commandLine():
 		commandLine()
 	elif command.lower() == "test":
 		test()
+		commandLine()
+	elif command.lower() == "syst":
+		syst()
 		commandLine()
 	else:
 		myPrint("You can type help for available commands!\n")
@@ -127,17 +131,26 @@ def syst():
 	myPrint(data)
 
 def usr():
-	sock.sendall(b'USER\r\n')
-	data = sock.recv(buffer)
-	myPrint(data)
-	user = input("Username : ")
-	sock.sendall(bytes(user + "\r\n", 'utf-8'))
-	data = sock.recv(buffer)
-	myPrint(data)
-	pas = input("Password : ")
-	sock.sendall(bytes(pas + "\r\n", 'utf-8'))
-	data = sock.recv(buffer)
-	myPrint(data)
+	#sock.sendall(b'USER\r\n')
+	#data = sock.recv(buffer)
+	#myPrint(data)
+	global is_logged_in
+	if not is_logged_in:
+
+		user = input("Username : ")
+		sock.sendall(bytes("user " + user + "\r\n", 'utf-8'))
+		data = sock.recv(buffer)
+		myPrint(data)
+		pas = input("Password : ")
+		sock.sendall(bytes(pas + "\r\n", 'utf-8'))
+		data = sock.recv(buffer)
+		myPrint(data)
+		is_logged_in = True
+	else:
+		user = input("Username: ")
+		sock.sendall(bytes("user " + user + "\r\n", 'utf-8'))
+		data = sock.recv(buffer)
+		myPrint(data)
 
 def port_mode():
 	ipAddr = get_ip()
@@ -270,8 +283,7 @@ def get_ip():
 #for a way to exit the program
 def disconnect():
 	sock.sendall(b'quit\r\n')
-	data = sock.recv(buffer)
-	myPrint(data)
+	print("Disconnected from server")
 
 def myPrint(data):
 	f.write(str(data))
@@ -292,4 +304,3 @@ class listeningThread(threading.Thread):
 if __name__ == '__main__':
 	main()
 	f.close()
-	print("Its working")

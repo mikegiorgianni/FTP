@@ -174,4 +174,199 @@ b'220 Welcome to CS472 FTP Server\r\n'570338	beginning the logon procedure
 b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'570338	Username and Password accepted! 
 What would you like to do : 
 b'227 Entering Passive Mode (10,246,251,93,90,121).\r\n'['(10', '246', '251', '93', '90', "121).\\r\\n'"]Ip for the socket is : 10.246.251.9390121The data port for the socket is : 23161we are connectedSending file...Data has been sent successfully!What would you like to do : 
-b'221 Goodbye.\r\n'
+b'221 Goodbye.\r\n'This is the Log for the FTP client/server communication
+This is the Log for the FTP client/server communication
+710883	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'710883	beginning the logon procedure 
+b''The username or password is incorrect! This is the Log for the FTP client/server communication
+This is the Log for the FTP client/server communication
+980282	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'980282	beginning the logon procedure 
+b''The username or password is incorrect! This is the Log for the FTP client/server communication
+863396	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+334954	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+956119	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+377543	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
+b''What would you like to do : 
+This is the Log for the FTP client/server communication
+This is the Log for the FTP client/server communication
+608417	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+4665	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+955080	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
+b''What would you like to do : 
+The available commands are : cwd, pwd, user, port, pasv, ,put, exit 
+What would you like to do : 
+This is the Log for the FTP client/server communication
+282308	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+b''This is the Log for the FTP client/server communication
+675905	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
+b''What would you like to do : 
+This is the Log for the FTP client/server communication
+924967	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+802104	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+624292	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+838063	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+865090	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+993681	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''What would you like to do : 
+This is the Log for the FTP client/server communication
+692238	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+142225	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+792586	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''What would you like to do : 
+This is the Log for the FTP client/server communication
+584891	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+965829	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+300889	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+950161	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+199334	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+511921	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+223984	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+467956	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+330237	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+780940	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+513996	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+53568	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+790280	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'This is the Log for the FTP client/server communication
+833835	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'This is the Log for the FTP client/server communication
+772907	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'This is the Log for the FTP client/server communication
+79264	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b''What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+This is the Log for the FTP client/server communication
+813132	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b'230: Already logged in\n'b''What would you like to do : 
+This is the Log for the FTP client/server communication
+51477	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'530: Incorrect password\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+959175	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+927448	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+876451	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b'230: Already logged in\n'What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+b''This is the Log for the FTP client/server communication
+146381	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b'230: Already logged in\n'What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+b''This is the Log for the FTP client/server communication
+336553	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b''What would you like to do : 
+This is the Log for the FTP client/server communication
+490558	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b''What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+This is the Log for the FTP client/server communication
+80067	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+471772	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b'500: Command unknown\n'What would you like to do : 
+b''This is the Log for the FTP client/server communication
+262964	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b'257: The current directory is: C:\\Users\\mike\\Documents\\Programs\\FTP\\ServerPYhw4V\\ServerPY\n'What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+b''This is the Log for the FTP client/server communication
+112216	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+811931	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+966176	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+932920	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b'257: The current directory is: C:\\Users\\mike\\Documents\\Programs\\FTP\\ServerPYhw4V\\ServerPY\n'What would you like to do : 

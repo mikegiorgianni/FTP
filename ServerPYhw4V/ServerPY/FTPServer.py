@@ -10,6 +10,9 @@ import time
 import datetime
 import sys
 
+
+
+
 class State():
 
     def __init__(self):
@@ -29,7 +32,7 @@ class State():
         self.conn = None
 
         #get current working directory
-        self.cwd = os.getcwd()
+        self.pwd = os.getcwd()
 
         #ip address for client
         self.addr = None
@@ -88,12 +91,20 @@ class FTPServer():
             fi.write(currTime + " : " + str(msg) + "\n")
             print(msg)
 
+    #For processing incoming data and returning the args to be passed to data_handler()
+    def data_proc(self, data):
+        data = data.decode().strip().lower()
+        self.log("Recieved data: " + data)
+        args = data.split(' ')
+        return args
+
+
     #helper to format the message
     def format_msg(self, code, msg):
         if msg:
-            c_msg = str(code) + ": " + str(msg) + "\r\n"
+            c_msg = str(code) + ": " + str(msg) + "\n"
         else:
-            c_msg = str(code) + "\r\n"
+            c_msg = str(code) + "\n"
 
         return c_msg.encode()
 
@@ -101,56 +112,11 @@ class FTPServer():
     def send_msg(self, state, c_msg):
         self.log(c_msg)
         state.conn.send(c_msg)
+        #self.conn.send(c_msg)
 
-
-    def connection_handler(self, connection, address):
-
-        try:
-            connection.send(self.format_msg(220, "Connected to Mikes FTP Server"))
-            #intialize a state for the client
-            state = State()
-            state.conn = connection
-            state.addr = address
-
-            while True:
-                data = connection.recv(1024)
-                if not data:
-                    self.log("No data recieved connection closed")
-                    break
-                #decode data of command
-                data = data.decode().strip()
-                #get arguments from command recieved
-                args = data.split(' ')
-
-                self.log("Recieved data: " + data)
-
-                #send data to data_handler and returns true if quit was called
-
-                quit = self.data_handler(args[0].lower(), args[1:], state)
-                
-                if quit:
-                    self.log("User wants to terminate connection")
-                    break
-            
-            connection.close()
-            self.log("Connection has been closed")
+    def data_handler(self, command, state, args = " "):
         
-        except Exception as ex:
-            print(ex)
-            if state.passive_mode:
-                if state.passive_conn:
-                    try:
-                        state.passive_conn.close()
-                    except Exception:
-                        pass
-            try:
-                connection.close()
-            except Exception:
-                pass
-
-    def data_handler(self, command, args, state):
-        
-        self.log("Attempting " + command + "with arguments " + args)
+        self.log("Attempting " + command + " with arguments " + args[0])
 
         if not state.logged_in and command not in ["user", "pass", "syst", "quit", "auth"]:
             self.send_msg(state, self.format_msg(530, "Access denied, not logged in"))
@@ -159,31 +125,33 @@ class FTPServer():
         if command == "user":
             #if user is not logged in, log their username and ask for password
             if not state.logged_in:
-                self.username = args[0]
+                state.username = args[0]
                 self.send_msg(state, self.format_msg(331, "What is the password?"))
-            #if they are accessing server without logging in so we dont save the password or username
-            else:
-                self.send_msg(state, self.format_msg(331, "Any password will work"))
-
-        elif command == "pass":
-            #check if user is logged in
-            #if not validate their log on info with validate_login
-            if not state.logged_in:
-                self.password = args[0]
-                #We validate the login after recieving the user and pass to avoid Oracle attacks
+                data = state.conn.recv(1024)
+                temp = FTPServer.data_proc(self, data)
+                state.password = temp[0]
+                #validate the user after recv both username and password -- basic oracle attack protection
                 if state.validate_login():
                     self.send_msg(state, self.format_msg(230, "Password accepted: User logged in"))
+                    self.log("Password accepted User: " + state.username + " is logged in")
                 else:
                     self.send_msg(state, self.format_msg(530, "Incorrect password"))
-                    self.log("Access denied to User: " + state.username + " IP: " + state.addr)
+                    self.log("Access denied to User: " + str(state.username) + " IP: " + str(state.addr))
 
                     state.username = None
                     state.password = None
+
+                ### Maybe just merge pass command code here to make the login verfication work
+                ### idk why you would want to call pass seperately anyways/ dont think you normally would
+            #if they are accessing server without logging in so we dont save the password or username
             else:
                 self.send_msg(state, self.format_msg(230, "Already logged in"))
 
+        
+
         elif command == "quit":
             self.send_msg(state, self.format_msg(221, "Goodbye"))
+            self.log("User: " + self.username + " has disconnected")
             return True
 
         elif command == "syst":
@@ -191,10 +159,20 @@ class FTPServer():
             self.log("Win10 Mike's Server")
 
         elif command == "pwd":
-            self.send_msg(state, self.format_msg(257, "The current directory is: " + state.cwd))
-            #"The current directory is: %s" % state.cwd  {}  If this above line doesnt work
+            self.send_msg(state, self.format_msg(257, "The current directory is: " + state.pwd))
+            self.log("Current directory is: " + state.pwd)
 
         elif command == "cwd":
+            #create way for users to easily naviagate the server without typing the whole path everytime
+            #idea: when user logs in automatically set cwd to the user dir
+            ### SUDO CODE ###
+            #if args[1] == "..":
+                #curpath = state.pwd.split("\")
+                #parentpath = "/".join(curpath[:-1])
+                #os.chdir(parentpath)
+                #log change to users state.pwd
+                #send confirmation to client
+            ##################
             if os.path.isdir(args[0]):
                 state.cwd = args[0]
                 self.send_msg(state, self.format_msg(250, "Directory successfully changed"))
@@ -385,9 +363,9 @@ class FTPServer():
                 self.send_msg(state, self.format_msg(500, "Permission denied"))
                 perm_denied = True
 
-            #Close connection and set passive_mode to False
-            state.passive_conn.close()
-            state.passive_mode = False
+                #Close connection and set passive_mode to False
+                state.passive_conn.close()
+                state.passive_mode = False
 
             if not perm_denied:
                 self.send_msg(state, self.format_msg(226, "Transfer complete"))
@@ -409,7 +387,7 @@ class FTPServer():
                 #self.send_msg(state, self.format_msg(200, "Explicity TLS enabled, secure connection over port 990"))
                 #self.log("Explicit TLS disabled cannot auth")
 
-        elif command == "list":
+        elif command.lower() == "list":
 
             #check for data connection
             if state.passive_mode:
@@ -429,6 +407,69 @@ class FTPServer():
         
         else:
             self.send_msg(state, self.format_msg(500, "Command unknown"))
+
+    #THE PROBLEM LIES HERE 07/08/24
+    def connection_handler(self, connection, address):
+
+        try:
+            connection.send(self.format_msg(220, "Connected to Mikes FTP Server"))
+            #intialize a state for the client
+            state = State()
+            state.conn = connection
+            state.addr = address
+
+            while True:
+                #data = connection.recv(1024)
+                #This way seems to show the client input more reliably 
+                data = state.conn.recv(1024)
+                if not data:
+                    self.log("No data recieved connection closed")
+                    break
+
+                args = FTPServer.data_proc(self, data)
+                if args[0] == "quit":
+                    self.log("User wants to terminate connection")
+                    break
+                elif len(args) == 1:
+                    FTPServer.data_handler(self, args[0], state)
+                else:
+                    FTPServer.data_handler(self, args[0], state, args[1:])
+                #### OLD CODE BLOCK ####
+                #decode data of command
+                #data = data.decode().strip()
+                #get arguments from command recieved
+                #args = data.split(' ')
+
+                #self.log("Recieved data: " + data)
+
+                #send data to data_handler and returns true if quit was called
+                #This check must be getting called and severing the connection
+                #quit = self.data_handler(args[0].lower(), args[1:], state)
+
+                #GOT TO MOVE THIS - need to make a loop in the main maybe; something like while state.conn == true --> recv data send to data_handler
+                #cannot be above the function declaration
+                #self.data_handler(args[0].lower(), args[1:], state)
+                #if args[0] == "quit":
+                    #self.log("User wants to terminate connection")
+                    #break
+                #### OLD CODE BLOCK ####
+            #state.conn.close()
+            self.log("Connection has been closed")
+            connection.close()
+        
+        except Exception as ex:
+            print(ex)
+            if state.passive_mode:
+                if state.passive_conn:
+                    try:
+                        state.passive_conn.close()
+                    except Exception:
+                        pass
+            try:
+                connection.close()
+            except Exception:
+                pass
+
 
     def listen_for_new(self):
         with ThreadPoolExecutor(max_workers = multiprocessing.cpu_count()) as pool:
