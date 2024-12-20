@@ -174,7 +174,7 @@ class FTPServer():
                 #send confirmation to client
             ##################
             if os.path.isdir(args[0]):
-                state.cwd = args[0]
+                state.cwd = os.chdir(args[0])
                 self.send_msg(state, self.format_msg(250, "Directory successfully changed"))
             else:
                 self.send_msg(state, self.format_msg(550, "Directory was not changed"))

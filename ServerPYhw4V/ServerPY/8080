@@ -1,0 +1,48 @@
+2024-07-31 18:00:46.112583 : Listening on Port: 21
+2024-07-31 18:01:53.920934 : Recieved data: user mike
+2024-07-31 18:01:53.925921 : Attempting user with arguments mike
+2024-07-31 18:01:53.932809 : b'331: What is the password?\n'
+2024-07-31 18:01:55.180828 : Recieved data: pass
+2024-07-31 18:01:55.196785 : b'230: Password accepted: User logged in\n'
+2024-07-31 18:01:55.204765 : Password accepted User: mike is logged in
+2024-07-31 18:02:07.019253 : Recieved data: cwd
+2024-07-31 18:02:07.025233 : Attempting cwd with arguments  
+2024-07-31 18:02:07.033215 : b'550: Directory was not changed\n'
+2024-07-31 18:02:14.064371 : Recieved data: pwd
+2024-07-31 18:02:14.070354 : Attempting pwd with arguments  
+2024-07-31 18:02:14.077336 : b'257: The current directory is: C:\\Users\\mike\\Documents\\Programs\\FTP\\ServerPYhw4V\\ServerPY\n'
+2024-07-31 18:02:14.086314 : Current directory is: C:\Users\mike\Documents\Programs\FTP\ServerPYhw4V\ServerPY
+2024-07-31 18:02:45.072089 : Recieved data: cwd c:\\users\\mike\\documents\\programs\\ftp\\serverpyhw4v\\
+2024-07-31 18:02:45.078073 : Attempting cwd with arguments c:\\users\\mike\\documents\\programs\\ftp\\serverpyhw4v\\
+2024-07-31 18:02:45.090040 : b'250: Directory successfully changed\n'
+2024-07-31 18:02:48.079012 : Recieved data: pwd
+2024-07-31 18:02:48.087987 : Attempting pwd with arguments  
+2024-07-31 18:02:48.095967 : b'257: The current directory is: C:\\Users\\mike\\Documents\\Programs\\FTP\\ServerPYhw4V\\ServerPY\n'
+2024-07-31 18:02:48.103945 : Current directory is: C:\Users\mike\Documents\Programs\FTP\ServerPYhw4V\ServerPY
+2024-07-31 18:04:37.342227 : Recieved data: syst
+2024-07-31 18:04:37.349902 : Attempting syst with arguments  
+2024-07-31 18:04:37.357924 : b"215: Win10 Mike's Server\n"
+2024-07-31 18:04:37.367896 : Win10 Mike's Server
+2024-07-31 18:05:02.524490 : Recieved data: port 10,0,0,47,35,40
+2024-07-31 18:05:02.533975 : Attempting port with arguments 10,0,0,47,35,40
+2024-07-31 18:05:02.543949 : b'425: Active mode disabled VIA config file\n'
+2024-07-31 18:05:02.552923 : Active mode disabled VIA config file
+2024-07-31 18:05:02.561900 : Recieved data: stor test.txt
+2024-07-31 18:05:02.571875 : Attempting stor with arguments test.txt
+2024-07-31 18:05:02.583842 : b'425: Enter passive mode first to transfer data\n'
+2024-07-31 18:07:24.867966 : Recieved data: user mike
+2024-07-31 18:07:24.875945 : Attempting user with arguments mike
+2024-07-31 18:07:24.884921 : b'331: What is the password?\n'
+2024-07-31 18:07:26.588159 : Recieved data: pass
+2024-07-31 18:07:26.597136 : b'230: Password accepted: User logged in\n'
+2024-07-31 18:07:26.605115 : Password accepted User: mike is logged in
+2024-07-31 18:07:28.134869 : Recieved data: port 10,0,0,47,35,40
+2024-07-31 18:07:28.141876 : Attempting port with arguments 10,0,0,47,35,40
+2024-07-31 18:07:28.150828 : b'425: Active mode disabled VIA config file\n'
+2024-07-31 18:07:28.158806 : Active mode disabled VIA config file
+2024-07-31 18:07:35.652829 : Recieved data: pasv
+2024-07-31 18:07:35.660809 : Attempting pasv with arguments  
+2024-07-31 18:07:35.669669 : b'425: Passive mode disabled VIA config file\n'
+2024-07-31 18:07:35.679633 : Config file says no to passive data connections
+2024-07-31 18:07:35.702573 : No data recieved connection closed
+2024-07-31 18:07:35.713544 : Connection has been closed

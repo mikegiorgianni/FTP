@@ -370,3 +370,10 @@ This is the Log for the FTP client/server communication
 b'220: Connected to Mikes FTP Server\n'What would you like to do : 
 b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
 b'257: The current directory is: C:\\Users\\mike\\Documents\\Programs\\FTP\\ServerPYhw4V\\ServerPY\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+This is the Log for the FTP client/server communication
+831172	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b'425: Active mode disabled VIA config file\n'What would you like to do : 
+b'425: Passive mode disabled VIA config file\n'['VIA']
