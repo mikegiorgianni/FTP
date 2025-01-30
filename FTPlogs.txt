@@ -1,1 +1,0 @@
-This is the Log for the FTP client/server communication

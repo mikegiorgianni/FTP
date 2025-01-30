@@ -79,7 +79,7 @@ def commandLine():
 	if command.lower()  == "cwd":
 		cwd()
 		commandLine()
-	elif command.lower() == "exit":
+	elif command.lower() == "quit":
 		disconnect()
 	elif command.lower() == "help":
 		myPrint("The available commands are : cwd, pwd, user, port, pasv, syst, put, exit \n")

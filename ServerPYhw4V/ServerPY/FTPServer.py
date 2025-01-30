@@ -3,15 +3,15 @@
 from concurrent.futures import ThreadPoolExecutor
 from urllib.request import urlopen
 import multiprocessing
-import socket, os
+import socket, os, subprocess
 import argparse
 import traceback
 import time
 import datetime
 import sys
 
-
-
+#Useful resource
+#rfc959
 
 class State():
 
@@ -45,6 +45,8 @@ class State():
                     self.logged_in = True
                     return True
             return False
+        #set users default dir to their own
+        #~~~~~~~~~ insert code here ~~~~~~~~~
 
 class FTPServer():
     #for log file and PORT calls
@@ -65,31 +67,29 @@ class FTPServer():
 
         self.user_file = 'userfile.txt'
 
-    def config_check(self):
-        with open('serverconfig.txt', 'r') as file:
-            for line in file.readlines():
-                #check for active tranfer
-                if line.strip() == "port_mode = True":
-                    self.port_mode = True
-                    self.log("active transfer (port) is enabled VIA configuration file")
-                else:
-                    self.log("active tranfer is disable VIA configuration file")
-                #check for passive transfer
-                if line.strip() == "pasv_mode = True":
-                    self.pasv_mode = True
-                    self.log("passive transfer enabled VIA configuration file")
-                else:
-                    self.log("passive tranfer is disable VIA configuration file")
-                
-                if self.pasv_mode and self.port_mode == False:
-                    self.log("FATAL: No data transfer mode in configuration file!")
-
     #helper for printing to the log file
     def log(self, msg):
         currTime = str(datetime.datetime.now())
         with open(self.log_file, 'a+') as fi:
             fi.write(currTime + " : " + str(msg) + "\n")
             print(msg)
+
+    def config_check(self):
+        with open('serverconfig.txt', 'r') as file:
+            lines = [line.rstrip() for line in file]
+            #check for both tranfers
+            if lines[0] == "port_mode = True" and lines[1] == "pasv_mode = True":
+                self.port_mode = True
+                self.pasv_mode = True
+                self.log("Active and Passive transfer is enabled")
+            elif lines[0] == "port_mode = False" and lines[1] == "pasv_mode = False":
+                self.log("FATAL ERROR: Must have Active or Passive transfer enabled")
+            elif lines[0] == "port_mode = True":
+                self.port_mode = True
+                self.log("Active tranfer enabled")
+            else:
+                self.pasv_mode = True
+                self.log("Passive transfer enabled")
 
     #For processing incoming data and returning the args to be passed to data_handler()
     def data_proc(self, data):
@@ -112,7 +112,6 @@ class FTPServer():
     def send_msg(self, state, c_msg):
         self.log(c_msg)
         state.conn.send(c_msg)
-        #self.conn.send(c_msg)
 
     def data_handler(self, command, state, args = " "):
         
@@ -147,7 +146,7 @@ class FTPServer():
             else:
                 self.send_msg(state, self.format_msg(230, "Already logged in"))
 
-        
+
 
         elif command == "quit":
             self.send_msg(state, self.format_msg(221, "Goodbye"))
@@ -164,11 +163,15 @@ class FTPServer():
 
         elif command == "cwd":
             #create way for users to easily naviagate the server without typing the whole path everytime
-            #idea: when user logs in automatically set cwd to the user dir
+            #idea: when user logs in automatically set current dir to the user dir
+            # https://www.ibm.com/docs/en/datapower-gateway/10.5.x?topic=commands-default-directory
+            # ^useful link about the default directory in an FTP server
+
             ### SUDO CODE ###
             #if args[1] == "..":
                 #curpath = state.pwd.split("\")
                 #parentpath = "/".join(curpath[:-1])
+                #might want to use subprocess so it doesnt affect the python scripts working dir
                 #os.chdir(parentpath)
                 #log change to users state.pwd
                 #send confirmation to client
@@ -387,10 +390,13 @@ class FTPServer():
                 #self.send_msg(state, self.format_msg(200, "Explicity TLS enabled, secure connection over port 990"))
                 #self.log("Explicit TLS disabled cannot auth")
 
+        #NEED TO REWRITE COMMAND Page 32 of RFC959
         elif command.lower() == "list":
+            #empty argument would return the files in the cwd if an argument is provided it will return the files in that location
 
             #check for data connection
             if state.passive_mode:
+                #we can replace os.popen with subprocess module
                 files = os.popen('ls -la {cwd}'.format(cwd = state.cwd)).read().strip()
                 self.send_msg(state, self.format_msg(150, "Directory listing is: "))
 
@@ -398,6 +404,7 @@ class FTPServer():
                     state.passive_conn.send((line + "\r\n").encode())
 
                 #close data connection and set passive_mode to False
+                #01/29/25 dont know if we would want to close the connection, for list you communicate over using an already established connection
                 state.passive_conn.close()
                 state.passive_mode = False
 
@@ -454,8 +461,10 @@ class FTPServer():
                     #break
                 #### OLD CODE BLOCK ####
             #state.conn.close()
-            self.log("Connection has been closed")
+            self.log("Connection has been closed \n" + "~~~~~~~~Awaiting a new connection~~~~~~~~")
             connection.close()
+            #maybe add notification (print) that the server is still listening for a new connection -- i tested it and you can reconnect as a new user...
+            #...after disconnecting from the server
         
         except Exception as ex:
             print(ex)
@@ -470,6 +479,17 @@ class FTPServer():
             except Exception:
                 pass
 
+    
+    """def create_root_dir(self):
+        state = State()
+        self.log("SANITY CHECK LOG")
+        print("SANITY CHECK")
+        dir = state.pwd.split("/")
+        if dir[-1] != "root":
+            subprocess.run(["mkdir root"])
+            subprocess.run(["cd root"])
+            state.pwd = os.getcwd()
+            self.log(server.pwd)"""
 
     def listen_for_new(self):
         with ThreadPoolExecutor(max_workers = multiprocessing.cpu_count()) as pool:
@@ -493,6 +513,7 @@ class FTPServer():
 
 if __name__ == "__main__":
 
+
     #CLI argument parser
     #check for log file since its madatory
     #alternative port is optional default is 21 was having issues with default port 21 
@@ -513,6 +534,8 @@ if __name__ == "__main__":
         sys.exit(1)
 
     server = FTPServer(**vars(args))
+    server.config_check()
+    server.create_root_dir()
     server.listen_for_new()
 
     print("Server shut down")
