@@ -480,16 +480,16 @@ class FTPServer():
                 pass
 
     
-    """def create_root_dir(self):
+    def create_root_dir(self):
         state = State()
         self.log("SANITY CHECK LOG")
         print("SANITY CHECK")
         dir = state.pwd.split("/")
         if dir[-1] != "root":
-            subprocess.run(["mkdir root"])
-            subprocess.run(["cd root"])
+            subprocess.run(["mkdir root"], capture_output=True, timeout=20, check=True)
+            subprocess.run(["cd root"], capture_output=True, timeout=20, check=True)
             state.pwd = os.getcwd()
-            self.log(server.pwd)"""
+            self.log(server.pwd)
 
     def listen_for_new(self):
         with ThreadPoolExecutor(max_workers = multiprocessing.cpu_count()) as pool:
