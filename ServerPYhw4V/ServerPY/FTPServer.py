@@ -34,8 +34,27 @@ class State():
         #get current working directory
         self.pwd = os.getcwd()
 
+        #pointer to users current working directory
+        self.cwd = None
+
         #ip address for client
         self.addr = None
+
+        #Creates default user directory
+    def user_dir(self, name):
+        path = self.pwd
+        #self.log("Attempting to create user Directory for '%s'" %name)
+        try:
+            path += "/%s" %name
+            os.mkdir(path, 777)
+            #self.log("Directory /%s has been created" %name)
+        except EOFError as error:
+            print(error)
+        
+        self.cwd = path
+
+        print("Changed directory to '%s'" %name)
+        
 
     def validate_login(self):
         #checks userfile for valid credentials
@@ -46,7 +65,8 @@ class State():
                     return True
             return False
         #set users default dir to their own
-        #~~~~~~~~~ insert code here ~~~~~~~~~
+        #maybe move the code up here
+
 
 class FTPServer():
     #for log file and PORT calls
@@ -113,6 +133,7 @@ class FTPServer():
         self.log(c_msg)
         state.conn.send(c_msg)
 
+
     def data_handler(self, command, state, args = " "):
         
         self.log("Attempting " + command + " with arguments " + args[0])
@@ -133,6 +154,8 @@ class FTPServer():
                 if state.validate_login():
                     self.send_msg(state, self.format_msg(230, "Password accepted: User logged in"))
                     self.log("Password accepted User: " + state.username + " is logged in")
+                    #add create user dir function
+                    state.user_dir(state.username)
                 else:
                     self.send_msg(state, self.format_msg(530, "Incorrect password"))
                     self.log("Access denied to User: " + str(state.username) + " IP: " + str(state.addr))
@@ -140,9 +163,7 @@ class FTPServer():
                     state.username = None
                     state.password = None
 
-                ### Maybe just merge pass command code here to make the login verfication work
-                ### idk why you would want to call pass seperately anyways/ dont think you normally would
-            #if they are accessing server without logging in so we dont save the password or username
+
             else:
                 self.send_msg(state, self.format_msg(230, "Already logged in"))
 
@@ -166,6 +187,9 @@ class FTPServer():
             #idea: when user logs in automatically set current dir to the user dir
             # https://www.ibm.com/docs/en/datapower-gateway/10.5.x?topic=commands-default-directory
             # ^useful link about the default directory in an FTP server
+            # I could leave the python code in the default directory but then theoretically, a user entering the server would be able to get to the source code
+            # I want to find a way to have the code run in a seperate directory from where the file system will be
+            # Folder A: has source code; Folder B: Is the root directory "/"; Folder C-Z: are user folders within the root directory
 
             ### SUDO CODE ###
             #if args[1] == "..":
@@ -176,14 +200,21 @@ class FTPServer():
                 #log change to users state.pwd
                 #send confirmation to client
             ##################
+
+
             if os.path.isdir(args[0]):
-                state.cwd = os.chdir(args[0])
+                #change this
+                path = state.pwd
+                path += "/" + args[0]
+                state.cwd = path
                 self.send_msg(state, self.format_msg(250, "Directory successfully changed"))
             else:
                 self.send_msg(state, self.format_msg(550, "Directory was not changed"))
             
         elif command == "cdup":
-            state.cwd = os.path.dirname(state.cwd)
+            path = state.cwd.split("/")
+            state.cwd = path[:-1]
+            #state.cwd = os.path.dirname(state.cwd)
 
         elif command == "pasv":
             if self.pasv_mode == False:
@@ -482,14 +513,21 @@ class FTPServer():
     
     def create_root_dir(self):
         state = State()
-        self.log("SANITY CHECK LOG")
-        print("SANITY CHECK")
-        dir = state.pwd.split("/")
-        if dir[-1] != "root":
-            subprocess.run(["mkdir root"], capture_output=True, timeout=20, check=True)
-            subprocess.run(["cd root"], capture_output=True, timeout=20, check=True)
-            state.pwd = os.getcwd()
-            self.log(server.pwd)
+        path = state.pwd
+        #dir = path.split("/")
+        #if dir[-1] != "root":
+        try:
+            path += "/root"
+            os.mkdir(path, 755)
+            self.log("Directory '%s' created" %path)
+        except OSError as error:
+            self.log(error)
+
+        os.chdir(path)
+        self.log("Working Directory Changed to '%s'" %path)
+        state.pwd = os.getcwd()
+        self.log(state.pwd)
+        
 
     def listen_for_new(self):
         with ThreadPoolExecutor(max_workers = multiprocessing.cpu_count()) as pool:
