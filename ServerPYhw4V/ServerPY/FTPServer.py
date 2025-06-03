@@ -138,7 +138,7 @@ class FTPServer():
         
         self.log("Attempting " + command + " with arguments " + args[0])
 
-        if not state.logged_in and command not in ["user", "pass", "syst", "quit", "auth"]:
+        if not state.logged_in and command not in ["user", "pass", "syst", "quit", "auth", "echo"]:
             self.send_msg(state, self.format_msg(530, "Access denied, not logged in"))
             return
         
@@ -178,9 +178,9 @@ class FTPServer():
             self.send_msg(state, self.format_msg(215, "Win10 Mike's Server"))
             self.log("Win10 Mike's Server")
 
-        elif command == "pwd":
-            self.send_msg(state, self.format_msg(257, "The current directory is: " + state.pwd))
-            self.log("Current directory is: " + state.pwd)
+        elif command.lower() == "pwd":
+            self.send_msg(state, self.format_msg(257, "The current directory is: " + state.cwd))
+            self.log("Current directory is: " + state.cwd)
 
         elif command == "cwd":
             #create way for users to easily naviagate the server without typing the whole path everytime
@@ -422,7 +422,7 @@ class FTPServer():
                 #self.log("Explicit TLS disabled cannot auth")
 
         #NEED TO REWRITE COMMAND Page 32 of RFC959
-        elif command.lower() == "list":
+        elif command == "list":
             #empty argument would return the files in the cwd if an argument is provided it will return the files in that location
 
             #check for data connection
@@ -443,6 +443,10 @@ class FTPServer():
             else:
                 self.send_msg(state, self.format_msg(425, "Please enter passive mode to transfer data"))
         
+        #Test Command to see if Client Server Connection is working as expected
+        elif command.lower() == "echo":
+            self.send_msg(state, self.format_msg(999, args[1:]))
+
         else:
             self.send_msg(state, self.format_msg(500, "Command unknown"))
 

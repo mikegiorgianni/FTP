@@ -1,5 +1,5 @@
 clean:
-	find . -name '*.txt' -exec rm --force {} +
+	find . -name '*.log' -exec rm --force {} +
 
 run:
 	py client.py FTPlogs.log

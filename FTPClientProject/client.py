@@ -108,6 +108,10 @@ def commandLine():
 	elif command.lower() == "syst":
 		syst()
 		commandLine()
+	elif command.lower() == "echo":
+		echo()
+		commandLine()
+
 	else:
 		myPrint("You can type help for available commands!\n")
 		commandLine()
@@ -115,18 +119,18 @@ def commandLine():
 #Change current directory
 def cwd():
 	path = input("Please enter the path to the new directory : " )
-	sock.sendall(bytes("CWD " + path + "\r\n", 'utf-8'))
+	sock.sendall(bytes("cwd " + path + "\r\n", 'utf-8'))
 	data = sock.recv(buffer)
 	myPrint(data)
 
 #basically ls call
 def pwd():
-	sock.sendall(b'PWD\r\n')
+	sock.sendall(bytes("pwd\r\n", 'utf-8'))
 	data = sock.recv(buffer)
 	myPrint(data)
 
 def syst():
-	sock.sendall(b'SYST\r\n')
+	sock.sendall(bytes("syst\r\n", 'utf-8'))
 	data = sock.recv(buffer)
 	myPrint(data)
 
@@ -151,6 +155,12 @@ def usr():
 		sock.sendall(bytes("user " + user + "\r\n", 'utf-8'))
 		data = sock.recv(buffer)
 		myPrint(data)
+
+def echo():
+	msg = input("What would you like to echo : ")
+	sock.sendall(bytes(msg + "\r\n", 'utf-8'))
+	data = sock.recv(buffer)
+	myPrint(data)
 
 def port_mode():
 	ipAddr = get_ip()
@@ -294,7 +304,7 @@ class listeningThread(threading.Thread):
 		self.port = port
 	def run(self):
 		serversock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		serversock.bind('127.0.0.1', port)
+		serversock.bind('127.0.0.1', self.port)
 		(clientsock, address) = serversock.accept()
 		while True:
 			data = clientsock.recv(buffer)
