@@ -1,379 +1,46 @@
 This is the Log for the FTP client/server communication
-452226	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'452226	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'452226	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'This is the Log for the FTP client/server communication
-128036	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'128036	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'128036	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'STOR test.txtb'150 Ok to send data.\r\n'This is the Log for the FTP client/server communication
-282769	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'282769	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'282769	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'STOR test.txtb'150 Ok to send data.\r\n'This is the Log for the FTP client/server communication
-986327	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'986327	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'986327	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'STOR test.txtb'150 Ok to send data.\r\n'This is the Log for the FTP client/server communication
-535145	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'535145	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'535145	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'STOR test.txtb'150 Ok to send data.\r\n'Sending file...This is the Log for the FTP client/server communication
-230610	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'230610	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'230610	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'This is the Log for the FTP client/server communication
-739932	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'739932	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'739932	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'STOR test.txtb'150 Ok to send data.\r\n'Sending file...This is the Log for the FTP client/server communication
-729489	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'729489	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'729489	Username and Password accepted! 
-What would you like to do : 
-b'421 Timeout.\r\n'STOR test.txtb''This is the Log for the FTP client/server communication
-577102	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'577102	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'577102	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'STOR test.txtb'150 Ok to send data.\r\n'Sending file...Data has been sent successfully!This is the Log for the FTP client/server communication
-514252	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'514252	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'514252	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'STOR test.txtb'150 Ok to send data.\r\n'Sending file...Data has been sent successfully!b''This is the Log for the FTP client/server communication
-980206	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'980206	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'980206	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'STOR test.txtb'150 Ok to send data.\r\n'Sending file...Data has been sent successfully!This is the Log for the FTP client/server communication
-547367	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'547367	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'547367	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'STOR test.txtb'150 Ok to send data.\r\n'Sending file...Data has been sent successfully!b'226 Transfer complete.\r\n'Sending file...This is the Log for the FTP client/server communication
-313080	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'313080	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'313080	Username and Password accepted! 
-What would you like to do : 
 This is the Log for the FTP client/server communication
-51690	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'51690	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'51690	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'STOR test.txtb'150 Ok to send data.\r\n'Sending file...Data has been sent successfully!What would you like to do : 
-b'226 Transfer complete.\r\n'This is the Log for the FTP client/server communication
-922298	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'922298	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'922298	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,145,249).\r\n'Connection Unsuccessful see error aboveWhat would you like to do : 
-b'221 Goodbye.\r\n'This is the Log for the FTP client/server communication
-449728	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'449728	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'449728	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,119,210).\r\n'This is the Log for the FTP client/server communication
-824840	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'824840	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'824840	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,173,143).\r\n'['(10', '246', '251', '93', '173', "143).\\r\\n'"](10.246.251.93What would you like to do : 
-b'221 Goodbye.\r\n'This is the Log for the FTP client/server communication
-834048	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'834048	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'834048	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,81,170).\r\n'This is the Log for the FTP client/server communication
-876358	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'876358	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'876358	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,252,61).\r\n'['(10', '246', '251', '93', '252', "61).\\r\\n'"]10.246.251.93What would you like to do : 
-b'221 Goodbye.\r\n'This is the Log for the FTP client/server communication
-637495	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'637495	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'637495	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,240,197).\r\n'['(10', '246', '251', '93', '240', "197).\\r\\n'"]10.246.251.93240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240240197What would you like to do : 
-b'221 Goodbye.\r\n'This is the Log for the FTP client/server communication
-385549	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'385549	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'385549	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,114,135).\r\n'['(10', '246', '251', '93', '114', "135).\\r\\n'"]Ip for the socket is : 10.246.251.93114135This is the Log for the FTP client/server communication
-492225	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'492225	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'492225	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,137,48).\r\n'['(10', '246', '251', '93', '137', "48).\\r\\n'"]Ip for the socket is : 10.246.251.9313748The data port for the socket is : 13713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713713748What would you like to do : 
-b'221 Goodbye.\r\n'This is the Log for the FTP client/server communication
-326502	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'326502	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'326502	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,230,179).\r\n'['(10', '246', '251', '93', '230', "179).\\r\\n'"]Ip for the socket is : 10.246.251.93230179The data port for the socket is : 59059What would you like to do : 
-b'221 Goodbye.\r\n'This is the Log for the FTP client/server communication
-519254	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'519254	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'519254	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,142,240).\r\n'['(10', '246', '251', '93', '142', "240).\\r\\n'"]Ip for the socket is : 10.246.251.93142240The data port for the socket is : 36592This is the Log for the FTP client/server communication
-126870	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'126870	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'126870	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,158,30).\r\n'['(10', '246', '251', '93', '158', "30).\\r\\n'"]Ip for the socket is : 10.246.251.9315830The data port for the socket is : 40478This is the Log for the FTP client/server communication
-571659	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'571659	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'571659	Username and Password accepted! 
-What would you like to do : 
+713053	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
 This is the Log for the FTP client/server communication
-733602	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'733602	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'733602	Username and Password accepted! 
-What would you like to do : 
-b'200 PORT command successful. Consider using PASV.\r\n'STOR testmike.txtb'150 Ok to send data.\r\n'Sending file...Data has been sent successfully!b'226 Transfer complete.\r\n'What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,136,145).\r\n'['(10', '246', '251', '93', '136', "145).\\r\\n'"]Ip for the socket is : 10.246.251.93136145The data port for the socket is : 34961This is the Log for the FTP client/server communication
-49475	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'49475	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'49475	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,34,134).\r\n'['(10', '246', '251', '93', '34', "134).\\r\\n'"]Ip for the socket is : 10.246.251.9334134The data port for the socket is : 8838This is the Log for the FTP client/server communication
-741320	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'741320	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'741320	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,75,168).\r\n'['(10', '246', '251', '93', '75', "168).\\r\\n'"]Ip for the socket is : 10.246.251.9375168The data port for the socket is : 19368Sending file...This is the Log for the FTP client/server communication
-717209	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'717209	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'717209	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,50,177).\r\n'['(10', '246', '251', '93', '50', "177).\\r\\n'"]Ip for the socket is : 10.246.251.9350177The data port for the socket is : 12977Sending file...Data has been sent successfully!This is the Log for the FTP client/server communication
-301211	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'301211	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'301211	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,204,245).\r\n'['(10', '246', '251', '93', '204', "245).\\r\\n'"]Ip for the socket is : 10.246.251.93204245The data port for the socket is : 52469Sending file...Data has been sent successfully!What would you like to do : 
-b'221 Goodbye.\r\n'This is the Log for the FTP client/server communication
-683360	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'683360	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'683360	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,102,248).\r\n'['(10', '246', '251', '93', '102', "248).\\r\\n'"]Ip for the socket is : 10.246.251.93102248The data port for the socket is : 26360Sending file...Data has been sent successfully!What would you like to do : 
-b'221 Goodbye.\r\n'This is the Log for the FTP client/server communication
-570338	Connecting to file server! 
-b'220 Welcome to CS472 FTP Server\r\n'570338	beginning the logon procedure 
-b'331 Please specify the password.\r\n'b'230 Login successful.\r\n'570338	Username and Password accepted! 
-What would you like to do : 
-b'227 Entering Passive Mode (10,246,251,93,90,121).\r\n'['(10', '246', '251', '93', '90', "121).\\r\\n'"]Ip for the socket is : 10.246.251.9390121The data port for the socket is : 23161we are connectedSending file...Data has been sent successfully!What would you like to do : 
-b'221 Goodbye.\r\n'This is the Log for the FTP client/server communication
+471946	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
 This is the Log for the FTP client/server communication
-710883	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'710883	beginning the logon procedure 
-b''The username or password is incorrect! This is the Log for the FTP client/server communication
+607143	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
 This is the Log for the FTP client/server communication
-980282	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'980282	beginning the logon procedure 
-b''The username or password is incorrect! This is the Log for the FTP client/server communication
-863396	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-334954	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-956119	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-377543	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
-b''What would you like to do : 
+718960	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+200243	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+309767	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
 This is the Log for the FTP client/server communication
 This is the Log for the FTP client/server communication
-608417	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-4665	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-955080	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
-b''What would you like to do : 
-The available commands are : cwd, pwd, user, port, pasv, ,put, exit 
-What would you like to do : 
+177346	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
 This is the Log for the FTP client/server communication
-282308	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
+603921	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
 You can type help for available commands!
 What would you like to do : 
-b''This is the Log for the FTP client/server communication
-675905	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
-b''What would you like to do : 
-This is the Log for the FTP client/server communication
-924967	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-802104	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\r\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-624292	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-This is the Log for the FTP client/server communication
-838063	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-This is the Log for the FTP client/server communication
-865090	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-993681	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''What would you like to do : 
-This is the Log for the FTP client/server communication
-692238	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-142225	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-792586	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''What would you like to do : 
-This is the Log for the FTP client/server communication
-584891	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-965829	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-300889	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-950161	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-199334	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-511921	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-223984	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-467956	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-330237	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-780940	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-513996	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-53568	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-790280	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'This is the Log for the FTP client/server communication
-833835	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'This is the Log for the FTP client/server communication
-772907	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'This is the Log for the FTP client/server communication
-79264	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
-b''What would you like to do : 
-You can type help for available commands!
-What would you like to do : 
-This is the Log for the FTP client/server communication
-813132	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
-b'230: Already logged in\n'b''What would you like to do : 
-This is the Log for the FTP client/server communication
-51477	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'b'530: Incorrect password\n'What would you like to do : 
-This is the Log for the FTP client/server communication
-959175	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-This is the Log for the FTP client/server communication
-927448	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-This is the Log for the FTP client/server communication
-876451	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
-b'230: Already logged in\n'What would you like to do : 
-You can type help for available commands!
-What would you like to do : 
-b''This is the Log for the FTP client/server communication
-146381	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
-b'230: Already logged in\n'What would you like to do : 
-You can type help for available commands!
-What would you like to do : 
-b''This is the Log for the FTP client/server communication
-336553	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
-b''What would you like to do : 
-This is the Log for the FTP client/server communication
-490558	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
-b''What would you like to do : 
-You can type help for available commands!
-What would you like to do : 
-This is the Log for the FTP client/server communication
-80067	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-471772	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
-b'500: Command unknown\n'What would you like to do : 
-b''This is the Log for the FTP client/server communication
-262964	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
-b'257: The current directory is: C:\\Users\\mike\\Documents\\Programs\\FTP\\ServerPYhw4V\\ServerPY\n'What would you like to do : 
-You can type help for available commands!
-What would you like to do : 
-b''This is the Log for the FTP client/server communication
-112216	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
 b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
 This is the Log for the FTP client/server communication
-811931	Connecting to file server! 
+600402	Connecting to file server! 
 b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'530: Access denied, not logged in\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+This is the Log for the FTP client/server communication
+736638	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'530: Access denied, not logged in\n'What would you like to do : 
 b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
-This is the Log for the FTP client/server communication
-966176	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-This is the Log for the FTP client/server communication
-932920	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
-b'257: The current directory is: C:\\Users\\mike\\Documents\\Programs\\FTP\\ServerPYhw4V\\ServerPY\n'What would you like to do : 
-This is the Log for the FTP client/server communication
-This is the Log for the FTP client/server communication
-831172	Connecting to file server! 
-b'220: Connected to Mikes FTP Server\n'What would you like to do : 
-b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
-b'425: Active mode disabled VIA config file\n'What would you like to do : 
-b'425: Passive mode disabled VIA config file\n'['VIA']
