@@ -44,3 +44,36 @@ This is the Log for the FTP client/server communication
 b'220: Connected to Mikes FTP Server\n'What would you like to do : 
 b'530: Access denied, not logged in\n'What would you like to do : 
 b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+250087	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+154092	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+681905	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+The available commands are : cwd, pwd, user, port, pasv, syst, put, exit 
+What would you like to do : 
+This is the Log for the FTP client/server communication
+815000	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b'500: Command unknown\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+543265	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+75419	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b'500: Command unknown\n'What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+The available commands are : cwd, pwd, user, port, pasv, syst, put, exit 
+What would you like to do : 
+b'257: The current directory is: C:\\Users\\lilmi\\Documents\\Programs\\FTP\\ServerPYhw4V\\ServerPY\\root/mike\n'What would you like to do : 
