@@ -92,3 +92,75 @@
 2025-06-03 15:45:06.592676 : Recieved data: pass
 2025-06-03 15:45:06.601426 : b'230: Password accepted: User logged in\n'
 2025-06-03 15:45:06.611841 : Password accepted User: mike is logged in
+2025-06-03 17:05:27.368093 : Working Directory Changed to 'C:\Users\lilmi\Documents\Programs\FTP\ServerPYhw4V\ServerPY/root'
+2025-06-03 17:05:27.368454 : C:\Users\lilmi\Documents\Programs\FTP\ServerPYhw4V\ServerPY\root
+2025-06-03 17:05:27.378831 : Listening on Port: 21
+2025-06-03 17:05:33.575619 : Recieved data: user mike
+2025-06-03 17:05:33.576111 : Attempting user with arguments mike
+2025-06-03 17:05:33.586909 : b'331: What is the password?\n'
+2025-06-03 17:05:34.303288 : Recieved data: pass
+2025-06-03 17:05:34.305034 : b'230: Password accepted: User logged in\n'
+2025-06-03 17:05:34.314608 : Password accepted User: mike is logged in
+2025-06-03 17:05:55.294620 : Recieved data: quit
+2025-06-03 17:05:55.295302 : User wants to terminate connection
+2025-06-03 17:05:55.307457 : Connection has been closed 
+~~~~~~~~Awaiting a new connection~~~~~~~~
+2025-06-03 17:12:51.611726 : Working Directory Changed to 'C:\Users\lilmi\Documents\Programs\FTP\ServerPYhw4V\ServerPY/root'
+2025-06-03 17:12:51.612227 : C:\Users\lilmi\Documents\Programs\FTP\ServerPYhw4V\ServerPY\root
+2025-06-03 17:12:51.623255 : Listening on Port: 21
+2025-06-03 17:12:58.360407 : Recieved data: user mike
+2025-06-03 17:12:58.361008 : Attempting user with arguments mike
+2025-06-03 17:12:58.372485 : b'331: What is the password?\n'
+2025-06-03 17:12:59.947722 : Recieved data: pass
+2025-06-03 17:12:59.948551 : b'230: Password accepted: User logged in\n'
+2025-06-03 17:12:59.957803 : Password accepted User: mike is logged in
+2025-06-03 17:22:27.525125 : Recieved data: user mike
+2025-06-03 17:22:27.525756 : Attempting user with arguments mike
+2025-06-03 17:22:27.535285 : b'331: What is the password?\n'
+2025-06-03 17:22:29.450257 : Recieved data: pass
+2025-06-03 17:22:29.451100 : b'230: Password accepted: User logged in\n'
+2025-06-03 17:22:29.461061 : Password accepted User: mike is logged in
+2025-06-03 17:24:13.664453 : Recieved data: user mike
+2025-06-03 17:24:13.665012 : Attempting user with arguments mike
+2025-06-03 17:24:13.673919 : b'331: What is the password?\n'
+2025-06-03 17:24:15.451995 : Recieved data: pass
+2025-06-03 17:24:15.452716 : b'230: Password accepted: User logged in\n'
+2025-06-03 17:24:15.461554 : Password accepted User: mike is logged in
+2025-06-03 17:24:15.472084 : User: mike has created their user directory at: C:\Users\lilmi\Documents\Programs\FTP\ServerPYhw4V\ServerPY\root/mike
+2025-06-03 17:27:22.647209 : Recieved data: ahhh
+2025-06-03 17:27:22.647890 : Attempting ahhh with arguments  
+2025-06-03 17:27:22.658852 : b'500: Command unknown\n'
+2025-06-03 17:29:36.199877 : Recieved data: quit
+2025-06-03 17:29:36.200520 : User wants to terminate connection
+2025-06-03 17:29:36.212211 : Connection has been closed 
+~~~~~~~~Awaiting a new connection~~~~~~~~
+2025-06-07 06:42:42.416738 : Working Directory Changed to 'C:\Users\lilmi\Documents\Programs\FTP\ServerPYhw4V\ServerPY/root'
+2025-06-07 06:42:42.427263 : C:\Users\lilmi\Documents\Programs\FTP\ServerPYhw4V\ServerPY\root
+2025-06-07 06:42:42.437663 : Listening on Port: 21
+2025-06-07 06:42:55.133240 : Recieved data: user mike
+2025-06-07 06:42:55.141986 : Attempting user with arguments mike
+2025-06-07 06:42:55.153250 : b'331: What is the password?\n'
+2025-06-07 06:43:01.681137 : Recieved data: pass
+2025-06-07 06:43:01.696567 : b'230: Password accepted: User logged in\n'
+2025-06-07 06:43:01.705522 : Password accepted User: mike is logged in
+2025-06-07 06:46:58.421300 : Working Directory Changed to 'C:\Users\lilmi\Documents\Programs\FTP\ServerPYhw4V\ServerPY/root'
+2025-06-07 06:46:58.429051 : C:\Users\lilmi\Documents\Programs\FTP\ServerPYhw4V\ServerPY\root
+2025-06-07 06:46:58.438802 : Listening on Port: 21
+2025-06-07 06:47:11.250905 : Recieved data: user mike
+2025-06-07 06:47:11.259987 : Attempting user with arguments mike
+2025-06-07 06:47:11.270741 : b'331: What is the password?\n'
+2025-06-07 06:47:13.895252 : Recieved data: pass
+2025-06-07 06:47:13.904517 : b'230: Password accepted: User logged in\n'
+2025-06-07 06:47:13.918150 : Password accepted User: mike is logged in
+2025-06-07 06:47:13.933857 : User: mike is working in their user directory at: C:\Users\lilmi\Documents\Programs\FTP\ServerPYhw4V\ServerPY\root/mike
+2025-06-07 06:47:26.301102 : Recieved data: ahhhhhhhhh
+2025-06-07 06:47:26.310645 : Attempting ahhhhhhhhh with arguments  
+2025-06-07 06:47:26.321406 : b'500: Command unknown\n'
+2025-06-07 06:48:34.513812 : Recieved data: pwd
+2025-06-07 06:48:34.523079 : Attempting pwd with arguments  
+2025-06-07 06:48:34.533785 : b'257: The current directory is: C:\\Users\\lilmi\\Documents\\Programs\\FTP\\ServerPYhw4V\\ServerPY\\root/mike\n'
+2025-06-07 06:48:34.543571 : Current directory is: C:\Users\lilmi\Documents\Programs\FTP\ServerPYhw4V\ServerPY\root/mike
+2025-06-07 06:48:44.034612 : Recieved data: quit
+2025-06-07 06:48:44.045185 : User wants to terminate connection
+2025-06-07 06:48:44.056437 : Connection has been closed 
+~~~~~~~~Awaiting a new connection~~~~~~~~

@@ -40,7 +40,7 @@ class State():
         #ip address for client
         self.addr = None
 
-        #Creates default user directory
+    #Creates default user directory
     def user_dir(self, name):
         path = self.pwd
         #self.log("Attempting to create user Directory for '%s'" %name)
@@ -48,8 +48,9 @@ class State():
             path += "/%s" %name
             os.mkdir(path, 777)
             #self.log("Directory /%s has been created" %name)
-        except EOFError as error:
+        except FileExistsError as error:
             print(error)
+            # HERE IS THE PROBLEM WHY THE SERVER KEEPS FAILTING 06/03/25
         
         self.cwd = path
 
@@ -156,6 +157,7 @@ class FTPServer():
                     self.log("Password accepted User: " + state.username + " is logged in")
                     #add create user dir function
                     state.user_dir(state.username)
+                    self.log("User: " + state.username + " is working in their user directory at: " + state.cwd)
                 else:
                     self.send_msg(state, self.format_msg(530, "Incorrect password"))
                     self.log("Access denied to User: " + str(state.username) + " IP: " + str(state.addr))

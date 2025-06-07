@@ -164,7 +164,7 @@ def echo():
 
 def port_mode():
 	ipAddr = get_ip()
-	print(ipAddr)
+	myPrint(ipAddr)
 	addrList = ipAddr.split('.')
 
 	remPort = 9000 % 256
@@ -173,7 +173,7 @@ def port_mode():
 		p2 = int(remPort)
 
 	tosend = "PORT " + addrList[0] + "," + addrList[1] + "," + addrList[2] + "," + addrList[3] + "," + str(p1) + "," + str(p2)
-	print(tosend)
+	myPrint(tosend)
 	sock.sendall(bytes(tosend + "\r\n", 'utf-8'))
 	data = sock.recv(buffer)
 	myPrint(data)
