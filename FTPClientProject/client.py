@@ -22,6 +22,7 @@ buffer = 2048
 #username = "mike"
 #password = "pass"
 is_logged_in = False
+curr_dir = ""
 
 def main():
 	# username and pass for test server
@@ -122,6 +123,24 @@ def cwd():
 	sock.sendall(bytes("cwd " + path + "\r\n", 'utf-8'))
 	data = sock.recv(buffer)
 	myPrint(data)
+	#add a check to see if the directory exists if not ask user if they want to create it
+	if data.startswith(b'250'):
+		myPrint("Directory changed successfully!")
+	else:
+		myPrint("Directory does not exist!")
+		create = input("Would you like to create it? (y/n) ")
+		if create.lower() == "y":
+			sock.sendall(bytes("mkd " + path + "\r\n", 'utf-8'))
+			data = sock.recv(buffer)
+			myPrint(data)
+			if data.startswith(b'257'):
+				myPrint("Directory '%s' created successfully!" %path + "\n" + "Would you like to change to it? (y/n) ")
+				change = input()
+				if change.lower() == "y":
+					cwd()
+		else:
+			myPrint("Directory not changed!")
+
 
 #basically ls call
 def pwd():
@@ -148,13 +167,14 @@ def usr():
 		pas = input("Password : ")
 		sock.sendall(bytes(pas + "\r\n", 'utf-8'))
 		data = sock.recv(buffer)
-		myPrint(data)
-		is_logged_in = True
+		if data.startswith(b'230'):
+			myPrint("Login successful!")
+			is_logged_in = True
+		else:
+			myPrint("Login failed! Please try again.")
+			return
 	else:
-		user = input("Username: ")
-		sock.sendall(bytes("user " + user + "\r\n", 'utf-8'))
-		data = sock.recv(buffer)
-		myPrint(data)
+		myPrint("You are already logged in!")
 
 def echo():
 	msg = input("What would you like to echo : ")

@@ -77,3 +77,80 @@ What would you like to do :
 The available commands are : cwd, pwd, user, port, pasv, syst, put, exit 
 What would you like to do : 
 b'257: The current directory is: C:\\Users\\lilmi\\Documents\\Programs\\FTP\\ServerPYhw4V\\ServerPY\\root/mike\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+746830	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+b'550: Directory was not changed\n'Directory does not exist!b'257: Directory created: pineapple\n'Directory 'pineapple' created successfully!
+Would you like to change to it? (y/n) b'550: Directory was not changed\n'Directory does not exist!b'550: Directory already exists\n'What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+This is the Log for the FTP client/server communication
+897745	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+The available commands are : cwd, pwd, user, port, pasv, syst, put, exit 
+What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b'550: Directory was not changed\n'Directory does not exist!Directory not changed!What would you like to do : 
+b'550: Directory was not changed\n'Directory does not exist!b'257: Directory created: pineapple\n'Directory 'pineapple' created successfully!
+Would you like to change to it? (y/n) b'550: Directory was not changed\n'Directory does not exist!b'550: Directory already exists\n'What would you like to do : 
+b'550: Directory was not changed\n'Directory does not exist!Directory not changed!What would you like to do : 
+This is the Log for the FTP client/server communication
+624882	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+b'550: Directory was not changed\n'Directory does not exist!b'257: Directory created: apple\n'Directory 'apple' created successfully!
+Would you like to change to it? (y/n) b'550: Directory was not changed\n'Directory does not exist!b'550: Directory already exists\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+99523	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+272017	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+46740	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'230: Password accepted: User logged in\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+273137	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'530: Incorrect password\n'What would you like to do : 
+b'331: What is the password?\n'What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+b'530: Incorrect password\n'What would you like to do : 
+The available commands are : cwd, pwd, user, port, pasv, syst, put, exit 
+What would you like to do : 
+b'530: Access denied, not logged in\n'Directory does not exist!b'530: Access denied, not logged in\n'What would you like to do : 
+b'331: What is the password?\n'What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+b'530: Incorrect password\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+799913	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+b'331: What is the password?\n'b'530: Incorrect password\n'What would you like to do : 
+b'331: What is the password?\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+814653	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'b'530: Incorrect password\n'What would you like to do : 
+The available commands are : cwd, pwd, user, port, pasv, syst, put, exit 
+What would you like to do : 
+b'530: Access denied, not logged in\n'What would you like to do : 
+b'331: What is the password?\n'What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+This is the Log for the FTP client/server communication
+407623	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login failed! Please try again.What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 

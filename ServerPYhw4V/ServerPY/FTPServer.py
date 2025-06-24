@@ -9,6 +9,7 @@ import traceback
 import time
 import datetime
 import sys
+from pathlib import Path
 
 #Useful resource
 #rfc959
@@ -32,7 +33,7 @@ class State():
         self.conn = None
 
         #get current working directory
-        self.pwd = os.getcwd()
+        self.pwd = Path.cwd()
 
         #pointer to users current working directory
         self.cwd = None
@@ -45,14 +46,15 @@ class State():
         path = self.pwd
         #self.log("Attempting to create user Directory for '%s'" %name)
         try:
-            path += "/%s" %name
-            os.mkdir(path, 777)
-            #self.log("Directory /%s has been created" %name)
+            #you can use /= because its a path object
+            #if the path does not exist it will create it
+            path /= name
+            path.mkdir(mode=0o755, exist_ok=False)
+            print("Directory /%s has been created" %name)
         except FileExistsError as error:
             print(error)
-            # HERE IS THE PROBLEM WHY THE SERVER KEEPS FAILTING 06/03/25
         
-        self.cwd = path
+        self.cwd = Path(path)
 
         print("Changed directory to '%s'" %name)
         
@@ -180,7 +182,7 @@ class FTPServer():
             self.send_msg(state, self.format_msg(215, "Win10 Mike's Server"))
             self.log("Win10 Mike's Server")
 
-        elif command.lower() == "pwd":
+        elif command == "pwd":
             self.send_msg(state, self.format_msg(257, "The current directory is: " + state.cwd))
             self.log("Current directory is: " + state.cwd)
 
@@ -202,18 +204,19 @@ class FTPServer():
                 #log change to users state.pwd
                 #send confirmation to client
             ##################
-
+            newPath = state.cwd
+            newPath += "/" + args[0]
+            self.log("Changing directory to: " + newPath)
 
             if os.path.isdir(args[0]):
-                #change this
-                path = state.pwd
-                path += "/" + args[0]
-                state.cwd = path
+                #if the path is a directory change the cwd to that directory
+                state.cwd = newPath
                 self.send_msg(state, self.format_msg(250, "Directory successfully changed"))
             else:
                 self.send_msg(state, self.format_msg(550, "Directory was not changed"))
             
         elif command == "cdup":
+            #modify so you cannot go into the root directory
             path = state.cwd.split("/")
             state.cwd = path[:-1]
             #state.cwd = os.path.dirname(state.cwd)
@@ -446,13 +449,31 @@ class FTPServer():
                 self.send_msg(state, self.format_msg(425, "Please enter passive mode to transfer data"))
         
         #Test Command to see if Client Server Connection is working as expected
-        elif command.lower() == "echo":
+        elif command == "echo":
             self.send_msg(state, self.format_msg(999, args[1:]))
+
+        elif command == "mkd":
+            #add a check to see number of arguments; if they have one argument its a subdirectory, if they have two its a full path,  no args is an error
+            #if user is logged in and has permission to create a directory
+            if state.logged_in:
+                if not os.path.exists(state.cwd + "/" + args[0]):
+                    try:
+                        os.mkdir(state.cwd + "/" + args[0], 755)
+                        self.send_msg(state, self.format_msg(257, "Directory created: " + args[0]))
+                        self.log("Directory created: " + args[0])
+                    except OSError as error:
+                        self.send_msg(state, self.format_msg(550, "Failed to create directory"))
+                        self.log("Failed to create directory: " + str(error))
+                else:
+                    self.send_msg(state, self.format_msg(550, "Directory already exists"))
+                    self.log("Directory already exists: " + args[0])
+            else:
+                self.send_msg(state, self.format_msg(530, "Access denied, not logged in"))
+                self.log("Access denied, not logged in")
 
         else:
             self.send_msg(state, self.format_msg(500, "Command unknown"))
 
-    #THE PROBLEM LIES HERE 07/08/24
     def connection_handler(self, connection, address):
 
         try:
@@ -520,18 +541,16 @@ class FTPServer():
     def create_root_dir(self):
         state = State()
         path = state.pwd
-        #dir = path.split("/")
-        #if dir[-1] != "root":
         try:
-            path += "/root"
-            os.mkdir(path, 755)
+            path /= "root"
+            path.mkdir(mode=0o755, exist_ok=False)
             self.log("Directory '%s' created" %path)
         except OSError as error:
             self.log(error)
 
         os.chdir(path)
         self.log("Working Directory Changed to '%s'" %path)
-        state.pwd = os.getcwd()
+        state.pwd = Path.cwd()
         self.log(state.pwd)
         
 
