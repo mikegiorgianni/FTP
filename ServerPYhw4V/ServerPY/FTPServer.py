@@ -50,13 +50,17 @@ class State():
             #if the path does not exist it will create it
             path /= name
             path.mkdir(mode=0o755, exist_ok=False)
-            print("Directory /%s has been created" %name)
+            print(f"Directory /{name} has been created")
         except FileExistsError as error:
             print(error)
+        except PermissionError as error:
+            print(f"Permission denied: {error}")
+        except OSError as error:
+            print(f"OS Error: {error}")
         
         self.cwd = Path(path)
 
-        print("Changed directory to '%s'" %name)
+        print(f"Changed directory to /{name}")
         
 
     def validate_login(self):
@@ -139,7 +143,7 @@ class FTPServer():
 
     def data_handler(self, command, state, args = " "):
         
-        self.log("Attempting " + command + " with arguments " + args[0])
+        self.log(f"Attempting {command} with arguments {args[0:]}")
 
         if not state.logged_in and command not in ["user", "pass", "syst", "quit", "auth", "echo"]:
             self.send_msg(state, self.format_msg(530, "Access denied, not logged in"))
@@ -156,13 +160,13 @@ class FTPServer():
                 #validate the user after recv both username and password -- basic oracle attack protection
                 if state.validate_login():
                     self.send_msg(state, self.format_msg(230, "Password accepted: User logged in"))
-                    self.log("Password accepted User: " + state.username + " is logged in")
+                    self.log(f"Password accepted User: {state.username} is logged in")
                     #add create user dir function
                     state.user_dir(state.username)
-                    self.log("User: " + state.username + " is working in their user directory at: " + state.cwd)
+                    self.log(f"User: {state.username} is working in their user directory at: {state.cwd}")
                 else:
                     self.send_msg(state, self.format_msg(530, "Incorrect password"))
-                    self.log("Access denied to User: " + str(state.username) + " IP: " + str(state.addr))
+                    self.log(f"Access denied to User: {state.username} {state.addr}")
 
                     state.username = None
                     state.password = None
@@ -183,8 +187,8 @@ class FTPServer():
             self.log("Win10 Mike's Server")
 
         elif command == "pwd":
-            self.send_msg(state, self.format_msg(257, "The current directory is: " + state.cwd))
-            self.log("Current directory is: " + state.cwd)
+            self.send_msg(state, self.format_msg(257, "The current directory is: " + str(state.cwd)))
+            self.log(f"Current directory is: {state.cwd}")
 
         elif command == "cwd":
             #create way for users to easily naviagate the server without typing the whole path everytime
@@ -205,10 +209,10 @@ class FTPServer():
                 #send confirmation to client
             ##################
             newPath = state.cwd
-            newPath += "/" + args[0]
-            self.log("Changing directory to: " + newPath)
+            newPath /= args[0]
+            self.log(f"Attempting to change directory to: {newPath}")
 
-            if os.path.isdir(args[0]):
+            if newPath.is_dir():
                 #if the path is a directory change the cwd to that directory
                 state.cwd = newPath
                 self.send_msg(state, self.format_msg(250, "Directory successfully changed"))
@@ -450,15 +454,17 @@ class FTPServer():
         
         #Test Command to see if Client Server Connection is working as expected
         elif command == "echo":
-            self.send_msg(state, self.format_msg(999, args[1:]))
+            self.send_msg(state, self.format_msg(999, f"{args[0:]}"))
 
         elif command == "mkd":
             #add a check to see number of arguments; if they have one argument its a subdirectory, if they have two its a full path,  no args is an error
             #if user is logged in and has permission to create a directory
             if state.logged_in:
-                if not os.path.exists(state.cwd + "/" + args[0]):
+                path = state.cwd
+                path /= args[0]
+                if not path.exists():
                     try:
-                        os.mkdir(state.cwd + "/" + args[0], 755)
+                        path.mkdir(mode=0o755, exist_ok=False)
                         self.send_msg(state, self.format_msg(257, "Directory created: " + args[0]))
                         self.log("Directory created: " + args[0])
                     except OSError as error:
@@ -544,12 +550,12 @@ class FTPServer():
         try:
             path /= "root"
             path.mkdir(mode=0o755, exist_ok=False)
-            self.log("Directory '%s' created" %path)
+            self.log(f"Directory {path} created")
         except OSError as error:
             self.log(error)
 
         os.chdir(path)
-        self.log("Working Directory Changed to '%s'" %path)
+        self.log(f"Working Directory Changed to {path}")
         state.pwd = Path.cwd()
         self.log(state.pwd)
         
@@ -593,7 +599,7 @@ if __name__ == "__main__":
         if port < 0:
             raise ValueError("Port number is invalid. Less than 0")
     except ValueError:
-        print("Port " + args.port + " given is not a valid port number")
+        print(f"Port {args.port} given is not a valid port number")
         sys.exit(1)
 
     server = FTPServer(**vars(args))

@@ -119,7 +119,7 @@ def commandLine():
 
 #Change current directory
 def cwd():
-	path = input("Please enter the path to the new directory : " )
+	path = input("Please enter the name of the directory : " )
 	sock.sendall(bytes("cwd " + path + "\r\n", 'utf-8'))
 	data = sock.recv(buffer)
 	myPrint(data)
@@ -178,7 +178,7 @@ def usr():
 
 def echo():
 	msg = input("What would you like to echo : ")
-	sock.sendall(bytes(msg + "\r\n", 'utf-8'))
+	sock.sendall(bytes("echo " + msg + "\r\n", 'utf-8'))
 	data = sock.recv(buffer)
 	myPrint(data)
 

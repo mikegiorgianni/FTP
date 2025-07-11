@@ -154,3 +154,105 @@ This is the Log for the FTP client/server communication
 b'220: Connected to Mikes FTP Server\n'What would you like to do : 
 b'331: What is the password?\n'Login failed! Please try again.What would you like to do : 
 b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+450413	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+971249	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+503307	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+541180	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+205786	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+267460	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login failed! Please try again.What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+673343	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+461761	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+199041	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+952002	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+596328	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'530: Access denied, not logged in\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+297956	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+This is the Log for the FTP client/server communication
+This is the Log for the FTP client/server communication
+840078	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login failed! Please try again.What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+You can type help for available commands!
+What would you like to do : 
+This is the Log for the FTP client/server communication
+402180	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+b'500: Command unknown\n'What would you like to do : 
+b'550: Directory was not changed\n'Directory does not exist!b'257: Directory created: apple\n'Directory 'apple' created successfully!
+Would you like to change to it? (y/n) b'250: Directory successfully changed\n'Directory changed successfully!What would you like to do : 
+b'500: Command unknown\n'What would you like to do : 
+b'999\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+181381	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+b'500: Command unknown\n'What would you like to do : 
+This is the Log for the FTP client/server communication
+600799	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login failed! Please try again.What would you like to do : 
+b'999\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+b'999\n'What would you like to do : 
+b'250: Directory successfully changed\n'Directory changed successfully!What would you like to do : 
+This is the Log for the FTP client/server communication
+420991	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login failed! Please try again.What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+b"999: ['master', '69']\n"What would you like to do : 
+This is the Log for the FTP client/server communication
+891939	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+b'550: Directory was not changed\n'Directory does not exist!Directory not changed!What would you like to do : 
+b'550: Directory was not changed\n'Directory does not exist!b'257: Directory created: pan\n'Directory 'pan' created successfully!
+Would you like to change to it? (y/n) b'250: Directory successfully changed\n'Directory changed successfully!What would you like to do : 
+b"999: ['fart', 'masta', '69']\n"What would you like to do : 
+This is the Log for the FTP client/server communication
+743668	Connecting to file server! 
+b'220: Connected to Mikes FTP Server\n'What would you like to do : 
+b'331: What is the password?\n'Login successful!What would you like to do : 
+b"999: ['fart', 'masta', '69']\n"What would you like to do : 
+b"999: ['ya', 'moms', 'a', 'hoe']\n"What would you like to do : 
+You can type help for available commands!
+What would you like to do : 

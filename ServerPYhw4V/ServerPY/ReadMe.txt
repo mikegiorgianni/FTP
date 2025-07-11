@@ -12,6 +12,7 @@ for validation to occur. I could try to make changes to this but for now this sh
 The system config can still be in the original folder since the check happens before /root is created
 
 ### ISSUE ###
+$Bug001 --CLOSED
 Only one user can join server at a time because the default directory is changed to the first users profile
 the validation file is left behind in root and the server cant access it. So I have to figure out how to
 give users their own files system to "live" within. P1 -> Server Files; PX -> UserX's Files...
@@ -31,4 +32,22 @@ so anytime they try to manipulate files it will automatically reference the path
 
 Created pointer state.cwd which points to a users current working directory.
 Fixed CWD and CDUP command.
-Two users can now join at the same time (will have to test more to make sure directory tracking is working.
+Two users can now join at the same time (will have to test more to make sure directory tracking is working.) $Bug001 --CLOSED
+
+
+~~~~~~~~~~~~~~~ 06.24.25 ~~~~~~~~~~~~~~~
+
+$Bug002: client side error caused by failed login --CLOSED
+    Repro: if a user failed login they would be sent back to the default input prompt as expected 
+    but when they tried to login again the system would skip the password prompt 
+    for the client while the server would wait for the password response.
+    Solution: Implemented proper handling for a failed login status
+Fixed Bug002
+Upgradingfrom os.path to pathlib.
+Added CWD functionality that will allow the user to create a new directory if the designated directory does not exist
+
+~~~~~~~~~~~~~~~ 06.25.25 ~~~~~~~~~~~~~~~
+Broke everything again I think its client side since the server isnt even seeing the message, similar to the issue i was having before
+    -changed to f-print in user_dir since you cannot concat str & path type
+Refactored code to use f-print (solves the communication issues)
+    -needed to use f-print and str(path) for certain cases
